@@ -17,45 +17,61 @@
 //Créer un tableau réponses et créer un tableau question
 
 let tableauQST = [
-    
-        {
-    question: "Quel est le panneau piste cyclable?",
-    reponse: "a"
-},
 
-{
-    question: "Le penneau est une obligation de:",
-    reponse: "c"
-},
+    {
+        question: "Quel est le panneau piste cyclable?",
+        a:"panneau a",
+        b:"panneau b",
+        c:"panneau c",
+        d:"panneau d",
+        r:"a" 
+    },
 
-{
-    question: "Etes vous prioritaire dans cette situation ?",
-    reponse: "non"
-},
+    {
+        question: "Le panneau est une obligation de:",
+        a:"b",
+        b:"c",
+        r:"b"
+    },
 
-{
-    question: "Sans presance de panneau de vitesse a combien etes vous autorisé a rouler ?",
-    reponse: "80 km/h"
-},
+    {
+        question: "Etes vous prioritaire dans cette situation ?",
+        a:"oui",
+        b:"non",
+        r:"b"
+    },
 
-{
-    question: "Quel est le mot manquant sur le panneau ?",
-    reponse: "Gendarmerie"
-}
+    {
+        question: "Sans presance de panneau de vitesse a combien etes vous autorisé a rouler ?",
+        a:"50 km/h",
+        b:"30 km/h",
+        c:"80 km/h",
+        d:"20 km/h",
+        r:"c"
+    },
+
+    {
+        question: "Quel est le mot manquant sur le panneau ?",
+        a: "Gendarmerie",
+        b:"Garderie",
+        c:"Prison",
+        r:"a"
+        
+    }
 ]
 
 //Créer une variable qui s'appelle réponse qui va stocker la reponse utilisateur via un propmt " question?"
 
 
-let reponse = prompt(tableauQST[0].question)
+
 
 //Créer une boucle qui compare la reponse de l'utilisateur a la reponse attendue
 
 function Quizz(question) {
 
     tableauQST.forEach(question => {
-
-        if (reponse === tableauQST[1].reponse) {
+        let reponse = prompt(question.question)
+        if (reponse === question.r) {
             console.log("Bonne réponse")
         } else {
             console.log("Presque ça...")
@@ -64,3 +80,4 @@ function Quizz(question) {
 }
 
 Quizz();
+
