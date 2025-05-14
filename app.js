@@ -29,16 +29,19 @@ let tableauQST = [
 
     {
         question: "Le panneau est une obligation de:",
-        a:"b",
-        b:"c",
+        a:"Tourner à droite",
+        b:"Tourner à gauche",
+        c:"Faire demitour",
+        d:"Parking",
         r:"b"
     },
 
     {
-        question: "Etes vous prioritaire dans cette situation ?",
-        a:"oui",
-        b:"non",
-        r:"b"
+        question: "Qui est prioritaire dans cette situation ?",
+        a:"moto A",
+        b:"moto b",
+        c:"vehicule c",
+        d:"Il n'y pas de panneau"
     },
 
     {
@@ -55,6 +58,7 @@ let tableauQST = [
         a: "Gendarmerie",
         b:"Garderie",
         c:"Prison",
+        d:"Air de jeu",
         r:"a"
         
     }
@@ -67,16 +71,30 @@ let tableauQST = [
 
 //Créer une boucle qui compare la reponse de l'utilisateur a la reponse attendue
 
+//Role:
+//Parametre:
+//Return:
+
+let compter=0
+
 function Quizz(question) {
 
     tableauQST.forEach(question => {
-        let reponse = prompt(question.question)
+        let reponse = prompt(`${question.question} : \n
+            a: ${question.a} \n
+            b: ${question.b}\n
+            c:${question.c}\n
+            d:${question.d}
+            `)
         if (reponse === question.r) {
             console.log("Bonne réponse")
+            compter++
         } else {
             console.log("Presque ça...")
         }
     })
+
+    alert(`Ton score est de ${compter}`)
 }
 
 Quizz();
